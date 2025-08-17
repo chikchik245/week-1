@@ -73,7 +73,7 @@ Company Tag: Facebook
 
 ---
 
-📌 Problem Statement
+##📌 Problem Statement
 
 You’re given an image represented as a 2D matrix of characters, where each character represents a pixel color.
 
@@ -91,7 +91,7 @@ Diagonal connections are not allowed.
 
 ---
 
-🔹 Input Format
+###🔹 Input Format
 
 A 2D character matrix image[n][m] representing the image.
 
@@ -101,13 +101,13 @@ A character C representing the new color.
 
 ---
 
-🔹 Output Format
+###🔹 Output Format
 
 The updated image matrix after applying the Flood Fill Algorithm.
 
 ---
 
-🔹 Example
+##🔹 Example
 
 Input
 
@@ -142,7 +142,7 @@ Flood fill changes all connected 'W' pixels to 'G'.
 
 ---
 
-🔹 Constraints
+###🔹 Constraints
 
 1 <= rows, cols <= 100
 
@@ -154,7 +154,7 @@ The original image contains only uppercase characters.
 
 ---
 
-🔹 Approaches
+###🔹 Approaches
 
 Two common approaches can be used:
 
@@ -173,7 +173,7 @@ Practice Question(3)
 
 ---
 
-📖 Problem Statement
+##📖 Problem Statement
 
 In large-scale systems, finding a common pattern or factor among multiple datasets is often required for optimization. Similarly, in number theory, the Greatest Common Divisor (GCD) helps determine the largest number that divides a set of numbers without leaving a remainder.
 
@@ -182,14 +182,14 @@ Your task is to compute the GCD of n integers efficiently.
 
 ---
 
-🔹 Input Format
+###🔹 Input Format
 
 First line: integer n (number of integers).
 
 Second line: n integers separated by space.
 
 
-🔹 Output Format
+###🔹 Output Format
 
 A single integer representing the GCD of the given numbers.
 
@@ -197,7 +197,7 @@ A single integer representing the GCD of the given numbers.
 
 ---
 
-📝 Examples
+##📝 Examples
 
 Example 1
 
@@ -238,7 +238,7 @@ Output
 
 ---
 
-🔹 Constraints
+###🔹 Constraints
 
 1 ≤ n ≤ 10^5
 
@@ -248,7 +248,7 @@ Output
 
 ---
 
-⚡ Approach
+###⚡ Approach
 
 We use the Euclidean Algorithm:
 
@@ -263,7 +263,7 @@ for i in range(1, n):
     result = gcd(result, arr[i])
 
 
-⏱ Time Complexity: O(n log M) (where M is the largest number).
+###⏱ Time Complexity: O(n log M) (where M is the largest number).
 📦 Space Complexity: O(1)
 
 
