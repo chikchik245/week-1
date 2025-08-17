@@ -1,0 +1,54 @@
+✅ Python Solution
+
+import math
+
+def find_gcd_of_list(arr):
+    gcd_result = arr[0]
+    for num in arr[1:]:
+        gcd_result = math.gcd(gcd_result, num)
+    return gcd_result
+
+
+if _name_ == "_main_":
+    n = int(input().strip())
+    arr = list(map(int, input().split()))
+    print(find_gcd_of_list(arr))
+
+
+---
+
+
+✅ Java Solution
+
+import java.util.*;
+
+public class Main {
+    public static int gcd(int a, int b) {
+        return (b == 0) ? a : gcd(b, a % b);
+    }
+
+    public static int findGCD(int[] arr) {
+        int result = arr[0];
+        for (int i = 1; i < arr.length; i++) {
+            result = gcd(result, arr[i]);
+        }
+        return result;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) arr[i] = sc.nextInt();
+        System.out.println(findGCD(arr));
+    }
+}
+
+
+---
+
+📊 Complexity Analysis
+
+Time Complexity: O(n log M)
+
+Space Complexity: O(1)
