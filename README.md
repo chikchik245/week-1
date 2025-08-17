@@ -1,5 +1,5 @@
-# week-1
-Practice Assignments
+# week-1 
+Practice Question(1)
 # Deep Clone a Linked List with Random Pointer
 
 ## 📝 Problem Statement
@@ -60,3 +60,222 @@ A deep clone with same structure but *different memory references*.
 - *Space:* O(1) (for interleaving) / O(N) (for hashmap)
 
 ---
+
+
+
+
+
+Practice Question(2)
+# Flood Fill Algorithm
+
+Company Tag: Facebook
+
+
+---
+
+📌 Problem Statement
+
+You’re given an image represented as a 2D matrix of characters, where each character represents a pixel color.
+
+You’re also given:
+
+the coordinates of a pixel (sr, sc)
+
+a new color C
+
+Your task is to perform a Flood Fill operation:
+
+Change the color of the starting pixel and all connected pixels (4-directionally: up, down, left, right) having the same original color to the new color C.
+
+Diagonal connections are not allowed.
+
+---
+
+🔹 Input Format
+
+A 2D character matrix image[n][m] representing the image.
+
+Two integers sr and sc representing the row and column of the starting pixel.
+
+A character C representing the new color.
+
+---
+
+🔹 Output Format
+
+The updated image matrix after applying the Flood Fill Algorithm.
+
+---
+
+🔹 Example
+
+Input
+
+image = [
+  ['B', 'B', 'W'],
+  ['W', 'W', 'W'],
+  ['W', 'W', 'W'],
+  ['B', 'B', 'B']
+]
+sr = 2
+sc = 2
+C = 'G'
+
+Output
+
+[
+  ['B', 'B', 'G'],
+  ['G', 'G', 'G'],
+  ['G', 'G', 'G'],
+  ['B', 'B', 'B']
+]
+
+Explanation
+
+The pixel at (2, 2) is 'W'.
+
+Flood fill changes all connected 'W' pixels to 'G'.
+
+'B' pixels remain unchanged.
+
+
+
+---
+
+🔹 Constraints
+
+1 <= rows, cols <= 100
+
+C is an uppercase character.
+
+The original image contains only uppercase characters.
+
+
+
+---
+
+🔹 Approaches
+
+Two common approaches can be used:
+
+1. DFS (Depth First Search)
+
+
+2. BFS (Breadth First Search)
+
+
+
+Practice Question(3)
+📌 Find the Greatest Common Divisor (GCD) of N Numbers
+
+💼 Company: Amazon
+
+
+---
+
+📖 Problem Statement
+
+In large-scale systems, finding a common pattern or factor among multiple datasets is often required for optimization. Similarly, in number theory, the Greatest Common Divisor (GCD) helps determine the largest number that divides a set of numbers without leaving a remainder.
+
+Your task is to compute the GCD of n integers efficiently.
+
+
+---
+
+🔹 Input Format
+
+First line: integer n (number of integers).
+
+Second line: n integers separated by space.
+
+
+🔹 Output Format
+
+A single integer representing the GCD of the given numbers.
+
+
+
+---
+
+📝 Examples
+
+Example 1
+
+Input
+
+3
+42 56 14
+
+Output
+
+14
+
+Explanation
+
+Factors of 42 → {1, 2, 3, 6, 7, 14, 21, 42}
+
+Factors of 56 → {1, 2, 4, 7, 8, 14, 28, 56}
+
+Factors of 14 → {1, 2, 7, 14}
+
+Greatest common factor = 14
+
+
+
+---
+
+Example 2
+
+Input
+
+4
+8 16 32 64
+
+Output
+
+8
+
+
+---
+
+🔹 Constraints
+
+1 ≤ n ≤ 10^5
+
+1 ≤ arr[i] ≤ 10^9
+
+
+
+---
+
+⚡ Approach
+
+We use the Euclidean Algorithm:
+
+For two numbers:
+
+gcd(a, b) = gcd(b, a % b)
+
+For multiple numbers:
+
+result = arr[0]
+for i in range(1, n):
+    result = gcd(result, arr[i])
+
+
+⏱ Time Complexity: O(n log M) (where M is the largest number).
+📦 Space Complexity: O(1)
+
+
+
+
+
+
+
+
+---
+
+
+
+
+
