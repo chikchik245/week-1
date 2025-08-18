@@ -73,7 +73,7 @@ Company Tag: Facebook
 
 ---
 
-## Problem Statement
+# Problem Statement
 
 You’re given an image represented as a 2D matrix of characters, where each character represents a pixel color.
 
@@ -166,14 +166,11 @@ Two common approaches can be used:
 
 
 Practice Question(3)
-📌 Find the Greatest Common Divisor (GCD) of N Numbers
+# Find the Greatest Common Divisor (GCD) of N Numbers
 
 💼 Company: Amazon
 
-
----
-
-## Problem Statement
+# Problem Statement
 
 In large-scale systems, finding a common pattern or factor among multiple datasets is often required for optimization. Similarly, in number theory, the Greatest Common Divisor (GCD) helps determine the largest number that divides a set of numbers without leaving a remainder.
 
@@ -267,15 +264,164 @@ for i in range(1, n):
 📦 Space Complexity: O(1)
 
 
+---
+Practice Question(4)
+# 🌳 Count Unival Subtrees (Google Interview Problem)
+
+## 📌 Problem Description
+A **unival subtree** (universal value tree) is a subtree where **all nodes contain the same value**.  
+A single node is always considered a unival subtree.
+
+You are given the root of a binary tree. Your task is to **count the number of unival subtrees**.
+
+---
+
+### ✅ Example Tree
+  0
+ / \
+1   0
+   / \
+  1   0
+ / \
+1   1
 
 
+**Output:**
 
+### Explanation
+The unival subtrees are:
+1. The left leaf with value `1`
+2. The rightmost leaf with value `0`
+3. Two `1` leaves under the left of right subtree
+4. The subtree rooted at the node with both children `1`
 
+Total = **5**
 
+---
+
+## 📊 Constraints
+- Number of nodes ≤ **1000**
+- Node values can be **any integer (positive or negative)**
+- Time Complexity: **O(N)**
+
+---
+
+## 🛠️ Approach
+We use **post-order traversal (DFS)**:
+1. Recursively check left and right subtrees.
+2. Determine if current node forms a unival subtree:
+   - Left and right subtrees are unival.
+   - Node’s value matches its children (if they exist).
+3. Maintain a counter of valid unival subtrees.
 
 ---
 
 
+
+Practice Question(5)
+# ⚖️ Equal Sum Partition (Asked by Facebook)
+
+## 📌 Problem Statement
+You are given a multiset (list that may contain duplicates).  
+Determine whether it can be partitioned into **two subsets** such that the sum of elements in both subsets is **equal**.
+
+---
+
+### ✅ Example 1
+**Input:**  
+[15, 5, 20, 10, 35, 15, 10]
+
+
+**Output:**  
+true
+
+
+**Explanation:**  
+- Subset 1: [15, 5, 10, 15, 10] → Sum = 55  
+- Subset 2: [20, 35] → Sum = 55  
+
+✅ Equal partition possible.
+
+---
+
+### ❌ Example 2
+**Input:**  
+[15, 5, 20, 10, 35]
+
+**Explanation:**  
+Total sum = 85 (odd) → cannot be split evenly.  
+
+---
+
+## 📊 Constraints
+- Input list may contain up to **100 elements**  
+- All numbers are **non-negative integers**  
+- At least **one number exists**  
+
+---
+
+## 🛠️ Approach
+1. Compute total sum. If it’s **odd**, immediately return **false**.  
+2. Use **Dynamic Programming (Subset Sum)** to check if any subset adds up to `total_sum // 2`.  
+3. If yes → array can be partitioned into two equal subsets.  
+
+### Time Complexity:  
+- **O(N × sum/2)** where `N` is the number of elements.  
+
+### Space Complexity:  
+- **O(sum/2)** for the DP array.  
+
+---
+
+# Practice Question(6)
+# 🔎 Word Search in 2D Matrix (Microsoft)
+
+## 📌 Problem Description
+You are given a **2D matrix of characters** and a **target word**.  
+Your task is to check if the word exists in the matrix either:
+- **Horizontally (left-to-right)**  
+- **Vertically (top-to-bottom)**  
+
+---
+
+### ✅ Example Input
+python
+matrix = [
+    ['F', 'A', 'C', 'I'],
+    ['O', 'B', 'Q', 'P'],
+    ['A', 'N', 'O', 'B'],
+    ['M', 'A', 'S', 'S']
+]
+word = "FOAM"
+✅ Example Output
+True
+
+
+## Explanation:
+
+"FOAM" appears in the first column: F → O → A → M (top to bottom)
+
+"MASS" appears in the last row: M → A → S → S (left to right)
+
+## Constraints
+
+1 ≤ M, N ≤ 100
+
+Word length ≤ max(M, N)
+
+Characters are uppercase English letters
+
+## Approach
+
+Scan each row → join characters into a string → check if word is a substring.
+
+Scan each column → build a string → check if word is a substring.
+
+If found in either → return True, else return False.
+
+## Time Complexity:
+
+O(M × N) (efficient for up to 100×100 matrix).
 
 
 
