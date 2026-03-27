@@ -1,0 +1,31 @@
+def can_partition(nums):
+    total_sum = sum(nums)
+    
+    # If total sum is odd, cannot partition into two equal subsets
+    if total_sum % 2 != 0:
+        return False
+    
+    target = total_sum // 2
+    n = len(nums)
+    
+    # DP array: dp[i] = True if sum i is achievable
+    dp = [False] * (target + 1)
+    dp[0] = True
+    
+    for num in nums:
+        for j in range(target, num - 1, -1):
+            dp[j] = dp[j] or dp[j - num]
+    
+    return dp[target]
+
+
+if __name__ == "__main__":
+    # Example 1
+    arr1 = [15, 5, 20, 10, 35, 15, 10]
+    print("Input:", arr1)
+    print("Can be partitioned?", can_partition(arr1))  # Expected True
+    
+    # Example 2
+    arr2 = [15, 5, 20, 10, 35]
+    print("\nInput:", arr2)
+    print("Can be partitioned?", can_partition(arr2))  # Expected False
